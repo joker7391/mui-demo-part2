@@ -15,22 +15,20 @@ const heights = [
 
 export const MuiMasonry = () => {
   return (
-    <Box sx={{ width: 900, minHeight: 400 }}>
+    <Box sx={{ width: "full", minHeight: 400 }}>
       <Masonry columns={4} spacing={1}>
         {heights.map((height, index) => (
           <Paper
             key={index}
             sx={{
-              //   display: 'flex',
-              //   justifyContent: 'center',
-              //   alignItems: 'center',
-              //   height,
               border: "1px solid",
             }}
           >
             <Accordion sx={{ minHeight: height }}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Accordion {index + 1}</Typography>
+                <Typography sx={{ fontSize: 10 }}>
+                  Accordion {index + 1}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails>Contents</AccordionDetails>
             </Accordion>

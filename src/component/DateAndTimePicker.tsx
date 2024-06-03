@@ -13,11 +13,12 @@ import { MultiInputDateTimeRangeField } from "@mui/x-date-pickers-pro/MultiInput
 import Stack from "@mui/material/Stack";
 import Tooltip from "@mui/material/Tooltip";
 import { DatePicker } from "@mui/x-date-pickers";
+import { DateRangePicker } from "@mui/x-date-pickers-pro";
 
 const ProSpan = styled("span")({
   display: "inline-block",
   height: "1em",
-  width: "1em",
+  width: "full",
   verticalAlign: "middle",
   marginLeft: "0.3em",
   marginBottom: "0.08em",
@@ -54,6 +55,7 @@ export default function DateAndTimePicker() {
           "MultiInputTimeRangeField",
           "MultiInputDateTimeRangeField",
         ]}
+        sx={{ width: "full" }}
       >
         <DemoItem label="Date Picker">
           <DatePicker defaultValue={dayjs("1991-08-30")} />
@@ -71,11 +73,15 @@ export default function DateAndTimePicker() {
           label={<ProLabel>Date Range</ProLabel>}
           component="MultiInputDateRangeField"
         >
-          <MultiInputDateRangeField
-            defaultValue={[dayjs("2022-04-17"), dayjs("2022-04-21")]}
+          <DateRangePicker
+            slotProps={{
+              fieldRoot: {
+                direction: { xs: "column", sm: "row" },
+              },
+            }}
           />
         </DemoItem>
-        <DemoItem
+        {/* <DemoItem
           label={<ProLabel>Time Range</ProLabel>}
           component="MultiInputTimeRangeField"
         >
@@ -84,9 +90,10 @@ export default function DateAndTimePicker() {
               dayjs("2022-04-17T15:30"),
               dayjs("2022-04-17T18:30"),
             ]}
+            sx={{ width: "full" }}
           />
-        </DemoItem>
-        <DemoItem
+        </DemoItem> */}
+        {/* <DemoItem
           label={<ProLabel>Date Time Range</ProLabel>}
           component="MultiInputDateTimeRangeField"
         >
@@ -95,8 +102,9 @@ export default function DateAndTimePicker() {
               dayjs("2022-04-17T15:30"),
               dayjs("2022-04-21T18:30"),
             ]}
+            sx={{ width: 40 }}
           />
-        </DemoItem>
+        </DemoItem> */}
       </DemoContainer>
     </LocalizationProvider>
   );

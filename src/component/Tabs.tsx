@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useState } from "react";
@@ -10,7 +11,7 @@ const Tabs = () => {
     setValue(newValue);
   };
   return (
-    <Box sx={{ width: "500px" }}>
+    <Box sx={{ width: "full" }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList
@@ -18,21 +19,18 @@ const Tabs = () => {
             aria-label="Tabs example"
             textColor="secondary"
             indicatorColor="secondary"
-            // centered // depacrated class
             variant="scrollable"
             scrollButtons="auto"
           >
-            <Tab
-              icon={<FavoriteIcon />}
-              iconPosition="start"
-              label="Tab One"
-              value="1"
-            />
+            <Tab label="Tab One" value="1" />
             <Tab label="Tab Two" value="2" disabled />
             <Tab label="Tab Three" value="3" />
             <Tab label="Tab Four" value="4" />
             <Tab label="Tab Five" value="5" />
             <Tab label="Tab Six" value="6" />
+            <Tab label="Tab Seven" value="7" />
+            <Tab label="Tab Eight" value="8" />
+            <Tab label="Tab Nine" value="9" />
           </TabList>
         </Box>
         <TabPanel value="1">Item One</TabPanel>
@@ -41,6 +39,9 @@ const Tabs = () => {
         <TabPanel value="4">Item Four</TabPanel>
         <TabPanel value="5">Item Five</TabPanel>
         <TabPanel value="6">Item Six</TabPanel>
+        <TabPanel value="7">Item Seven</TabPanel>
+        <TabPanel value="8">Item Eight</TabPanel>
+        <TabPanel value="9">Item Nine</TabPanel>
       </TabContext>
     </Box>
   );
